@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+        }
+        .comparison-card {
+            width: 100%;
+            max-width: 1200px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .comparison-card .header {
+            background-color: #e10098; /* Angular Red */
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .comparison-card .content {
+            padding: 1rem;
+        }
+        .comparison-card table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .comparison-card th, .comparison-card td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 2px solid #f1f1f1;
+        }
+        .comparison-card th {
+            background-color: #e10098; /* Angular Red */
+            color: #fff;
+            font-size: 1.125rem;
+        }
+        .comparison-card td {
+            font-size: 0.875rem;
+        }
+        .comparison-card tr:hover {
+            background-color: #f9f9f9;
+        }
+        .comparison-card td[data-label]::before {
+            content: attr(data-label);
+            font-weight: bold;
+            display: block;
+            color: #e10098; /* Angular Red */
+        }
+        .comparison-card .footer {
+            background-color: #e10098; /* Angular Red */
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            border-top: 2px solid #f1f1f1;
+        }
+        @media (max-width: 768px) {
+            .comparison-card table, .comparison-card th, .comparison-card td {
+                display: block;
+                width: 100%;
+            }
+            .comparison-card th, .comparison-card td {
+                box-sizing: border-box;
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                padding-right: 1rem;
+                overflow: hidden;
+            }
+            .comparison-card th::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 1rem;
+                font-weight: bold;
+                white-space: nowrap;
+                color: #e10098; /* Angular Red */
+            }
+            .comparison-card td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 1rem;
+                white-space: nowrap;
+                color: #e10098; /* Angular Red */
+            }
+            .comparison-card td {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison-card">
+        <div class="header">Comparison: Angular vs React vs Blazor</div>
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Criteria</th>
+                        <th>Angular</th>
+                        <th>React</th>
+                        <th>Blazor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Criteria">Language</td>
+                        <td data-label="Angular">TypeScript</td>
+                        <td data-label="React">JavaScript (with JSX)</td>
+                        <td data-label="Blazor">C#</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Architecture</td>
+                        <td data-label="Angular">Full-fledged framework, opinionated structure</td>
+                        <td data-label="React">Library focused on UI, highly flexible</td>
+                        <td data-label="Blazor">Framework, part of .NET ecosystem</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Learning Curve</td>
+                        <td data-label="Angular">Steep, especially for beginners due to its extensive features</td>
+                        <td data-label="React">Moderate, easier for developers familiar with JavaScript</td>
+                        <td data-label="Blazor">Moderate for .NET developers, but higher for others</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Performance</td>
+                        <td data-label="Angular">Very High, with built-in optimizations and Ahead-of-Time (AOT) compilation</td>
+                        <td data-label="React">High, due to virtual DOM and efficient diffing</td>
+                        <td data-label="Blazor">Moderate, WebAssembly can have slower load times</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Ecosystem</td>
+                        <td data-label="Angular">Extensive, with built-in solutions and strong community support</td>
+                        <td data-label="React">Extensive, with a vast array of third-party libraries</td>
+                        <td data-label="Blazor">Limited, smaller community and fewer third-party libraries</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Community Support</td>
+                        <td data-label="Angular">Large, strong community with comprehensive documentation</td>
+                        <td data-label="React">Large, strong community with extensive resources</td>
+                        <td data-label="Blazor">Growing, but smaller compared to React and Angular</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Integration</td>
+                        <td data-label="Angular">Self-contained, with less need for external libraries</td>
+                        <td data-label="React">Easily integrates with other libraries and frameworks</td>
+                        <td data-label="Blazor">Seamless integration with .NET, but limited in non-.NET environments</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Tooling</td>
+                        <td data-label="Angular">Robust, with powerful CLI and extensive official tools</td>
+                        <td data-label="React">Flexible, with a variety of build tools and packages</td>
+                        <td data-label="Blazor">Good, but limited compared to Angular and React</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Scalability</td>
+                        <td data-label="Angular">Very High, designed for large-scale enterprise apps</td>
+                        <td data-label="React">High, suitable for large applications</td>
+                        <td data-label="Blazor">Moderate, best for apps within .NET ecosystem</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Use Case Suitability</td>
+                        <td data-label="Angular">Large-scale enterprise apps, apps requiring comprehensive built-in solutions</td>
+                        <td data-label="React">SPAs, dynamic web apps, projects needing flexibility</td>
+                        <td data-label="Blazor">Internal enterprise apps, apps requiring tight .NET integration</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Maturity</td>
+                        <td data-label="Angular">Very Mature, backed by Google with a long track record</td>
+                        <td data-label="React">Mature, with a long history and strong industry adoption</td>
+                        <td data-label="Blazor">Emerging, still catching up in terms of features and community</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Why Use It?</td>
+                        <td data-label="Angular">Comprehensive, scalable, strong typing with TypeScript</td>
+                        <td data-label="React">Flexibility, performance, extensive ecosystem</td>
+                        <td data-label="Blazor">Tight .NET integration, familiarity for C# developers</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Criteria">Why Not Use It?</td>
+                        <td data-label="Angular">Steep learning curve, may be overkill for simple projects</td>
+                        <td data-label="React">May require more configuration and additional libraries</td>
+                        <td data-label="Blazor">Limited ecosystem, potential performance issues with WebAssembly</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>s
+    </div>
+</body>
+</html>
