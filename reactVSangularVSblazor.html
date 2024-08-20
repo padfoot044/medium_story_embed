@@ -54,12 +54,6 @@
         .comparison-card tr:hover {
             background-color: #f9f9f9;
         }
-        .comparison-card td[data-label]::before {
-            content: attr(data-label);
-            font-weight: bold;
-            display: block;
-            color: #e10098; /* Angular Red */
-        }
         .comparison-card .footer {
             background-color: #e10098; /* Angular Red */
             color: #fff;
@@ -76,14 +70,15 @@
             .comparison-card th, .comparison-card td {
                 box-sizing: border-box;
                 text-align: right;
-                padding-left: 50%;
                 position: relative;
+                padding-left: 50%;
                 padding-top: 1rem;
                 padding-bottom: 1rem;
-                padding-right: 1rem;
-                overflow: hidden;
             }
-            .comparison-card th::before {
+            .comparison-card thead {
+                display: none;
+            }
+            .comparison-card td::before {
                 content: attr(data-label);
                 position: absolute;
                 left: 0;
@@ -93,17 +88,13 @@
                 white-space: nowrap;
                 color: #e10098; /* Angular Red */
             }
-            .comparison-card td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 0;
-                width: 50%;
-                padding-left: 1rem;
-                white-space: nowrap;
-                color: #e10098; /* Angular Red */
-            }
             .comparison-card td {
                 text-align: left;
+                position: relative;
+                padding-left: 50%;
+            }
+            .comparison-card td:nth-of-type(1)::before {
+                content: "";
             }
         }
     </style>
@@ -202,7 +193,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>s
+        </div>
     </div>
 </body>
 </html>
